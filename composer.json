@@ -2,7 +2,7 @@
     "name": "kylebeckles-brightfuture/twitteroauth",
     "type": "library",
     "license": "MIT",
-    "description": "PHP library to communicate with Twitter OAuth API version 1.1. Forked from hricardoper/twitteroauth @ ttps://github.com/ricardoper.",
+    "description": "PHP library to communicate with Twitter OAuth API version 1.1. Forked from hricardoper/twitteroauth @ https://github.com/ricardoper.",
     "keywords": ["PHP", "Twitter", "OAuth", "API v1.1"],
     "homepage": "https://github.com/kylebeckles-brightfuture/twitteroauth",
     "authors": [
