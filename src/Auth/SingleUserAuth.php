@@ -10,6 +10,8 @@
 
 namespace TwitterOAuth\Auth;
 
+use TwitterOAuth\Serializer\SerializerInterface;
+
 class SingleUserAuth extends AuthAbstract
 {
     /**
@@ -30,6 +32,30 @@ class SingleUserAuth extends AuthAbstract
         'api' => '1.1/',
     );
 
+    /**
+     * Authentication Base
+     *
+     * @param array $credentials Credentials Array
+     * @param SerializerInterface $serializer Output Serializer
+     * @param array $base_urls Base URLs for API, version and upload.
+     * @throws MissingCredentialsException
+     */
+    public function __construct(array $credentials, SerializerInterface $serializer, array $base_urls = [])
+    {
+        Parent::__construct($credentials, $serializer);
+
+        if (array_key_exists('domain', $base_urls)) {
+            $this->urls['domain'] = $base_urls['domain'];
+        }
+
+        if (array_key_exists('upload', $base_urls)) {
+            $this->urls['upload'] = $base_urls['upload'];
+        }
+
+        if (array_key_exists('api', $base_urls)) {
+            $this->urls['api'] = $base_urls['api'];
+        }
+    }
 
     /**
      * Gets the Twitter Access token
